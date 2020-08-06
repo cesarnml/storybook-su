@@ -1,12 +1,15 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import '../../index.css'
+import { withKnobs, object } from '@storybook/addon-knobs/react'
 
-import { Task } from './Task'
+import Task from './Task'
 
 export default {
-  title: 'Task',
   component: Task,
+  title: 'Task',
+  decorators: [withKnobs],
+  parameters: { assets: ['designs/items.png'] },
+  // Our exports that end in "Data" are not stories.
   excludeStories: /.*Data$/,
 }
 
@@ -20,12 +23,11 @@ export const taskData = {
 export const actionsData = {
   onPinTask: action('onPinTask'),
   onArchiveTask: action('onArchiveTask'),
-  onUnpinTask: action('onUnpinTask'),
-  onInboxTask: action('onInboxTask'),
 }
 
-export const Default = () => <Task task={{ ...taskData }} {...actionsData} />
-
+export const Default = () => {
+  return <Task task={object('task', { ...taskData })} {...actionsData} />
+}
 export const Pinned = () => <Task task={{ ...taskData, state: 'TASK_PINNED' }} {...actionsData} />
 
 export const Archived = () => <Task task={{ ...taskData, state: 'TASK_ARCHIVED' }} {...actionsData} />

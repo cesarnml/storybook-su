@@ -22,8 +22,8 @@
 **What and Why?**
 
 - A development environment and playground for UI components
-- Crate components independently
-- Showcase those componetns interactively in an isolated devlopment environment
+- Create components independently
+- Showcase those componetns interactively in an isolated development environment
 - Ability to view the different components that have already been developed
 - View what are the different props that those developed components accept
 - Ability to visually showcase those components to your stake holders for feedback
