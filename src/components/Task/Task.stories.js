@@ -20,6 +20,8 @@ export const taskData = {
 export const actionsData = {
   onPinTask: action('onPinTask'),
   onArchiveTask: action('onArchiveTask'),
+  onUnpinTask: action('onUnpinTask'),
+  onInboxTask: action('onInboxTask'),
 }
 
 export const Default = () => <Task task={{ ...taskData }} {...actionsData} />
